@@ -1,0 +1,22 @@
+# build output
+dist/
+.astro/
+
+# generated at build time (rebuilt on every build)
+public/search-index.json
+public/llms.txt
+public/llms-full.txt
+public/og.png
+
+# deps
+node_modules/
+
+# env & logs
+.env
+.env.production
+npm-debug.log*
+.DS_Store
+
+# editor
+.vscode/
+.idea/

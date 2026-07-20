@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import Ask from '../components/Ask.tsx';
+---
+
+<Base title="Enrique Enciso — Ask this site anything">
+  <!-- client:load — the chat is the whole page, hydrate immediately. -->
+  <Ask client:load />
+</Base>

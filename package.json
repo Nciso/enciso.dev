@@ -1,0 +1,38 @@
+{
+  "name": "enrique-personal-site",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.15.1",
+  "description": "Browser-native AI knowledge site — ask questions, get answers grounded in published Markdown. No backend, no inference API.",
+  "scripts": {
+    "index": "node scripts/build-index.mjs",
+    "og": "node scripts/build-og.mjs",
+    "prebuild": "node scripts/build-index.mjs && node scripts/build-og.mjs",
+    "dev": "pnpm run index && pnpm run og && astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@mlc-ai/web-llm": "^0.2.79",
+    "astro": "^5.13.0",
+    "minisearch": "^7.1.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "sharp": "^0.35.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

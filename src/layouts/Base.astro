@@ -1,0 +1,121 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogType?: string;
+}
+const {
+  title,
+  description = 'Ask Enrique Enciso anything — answers grounded in published content, running privately in your browser.',
+  ogType = 'website',
+} = Astro.props;
+
+// Astro.site comes from PUBLIC_SITE_URL (see astro.config.mjs).
+const site = Astro.site ?? new URL('https://enciso.dev');
+const canonical = new URL(Astro.url.pathname, site);
+const ogImage = new URL('/og.png', site);
+const keywords = 'Enrique Enciso, Reley, Jaro, AI agents, software engineer, WebLLM, browser AI, RAG, Terraform, Go, Ruby on Rails';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Enrique Enciso" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Enrique Enciso" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ask about Enrique — a browser-native AI grounded in published content" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Point external AI systems at the machine-readable knowledge base. -->
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+    <title>{title}</title>
+    <!-- Apply the saved theme before first paint to avoid a flash. -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="topbar__brand" href="/">Enrique Enciso</a>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="/">Ask</a>
+          <a href="/projects/reley">Reley</a>
+          <a href="/projects/jaro">Jaro</a>
+          <a href="/experience">Experience</a>
+          <a href="/contact">Contact</a>
+          <button id="theme-toggle" class="topbar__theme" type="button" aria-label="Toggle theme" title="Toggle theme"></button>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <span>Grounded in published content · Private by default</span>
+        <a href="/llms.txt">llms.txt</a>
+      </footer>
+    </div>
+
+    <!-- Theme switcher: cycles system → light → dark. -->
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var order = ['system', 'light', 'dark'];
+        var icons = { system: '◐', light: '☀', dark: '☾' };
+        function current() {
+          try {
+            return localStorage.getItem('theme') || 'system';
+          } catch (e) {
+            return 'system';
+          }
+        }
+        function apply(mode) {
+          if (mode === 'system') delete document.documentElement.dataset.theme;
+          else document.documentElement.dataset.theme = mode;
+          btn.textContent = icons[mode];
+          btn.setAttribute('aria-label', 'Theme: ' + mode + ' (click to change)');
+        }
+        apply(current());
+        btn.addEventListener('click', function () {
+          var next = order[(order.indexOf(current()) + 1) % order.length];
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+          apply(next);
+        });
+      })();
+    </script>
+  </body>
+</html>
