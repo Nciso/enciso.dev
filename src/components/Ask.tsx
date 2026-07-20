@@ -17,19 +17,27 @@ import {
 const MODEL_STORAGE_KEY = 'ask:model';
 
 // A pool of grounded starter questions; a random handful is shown each visit.
+// Spans bio, projects, and the writing — so a visitor can stumble into any of it.
 const EXAMPLE_POOL = [
+  // Who / what
   'What is Enrique building?',
   'Tell me about Reley.',
   'What is Jaro?',
-  'Experience with AI agents?',
-  'What technologies does Enrique use?',
-  'Why did he build Reley?',
   'Where has Enrique worked?',
   'What did he do at AutoCloud?',
-  'Does he know Go?',
+  'What technologies does he use?',
   'Has he worked in fintech?',
-  'How can I contact you?',
   'What is he like to work with?',
+  'How can I contact you?',
+  // Agents & workflow
+  'How does he run coding agents solo?',
+  'Explain his spec → plan → review workflow.',
+  'How do you ship features without touching an editor?',
+  // Security & infrastructure
+  'How does he present security decisions to non-technical execs?',
+  'Can Microsoft 365 and Google Workspace run side by side?',
+  'How do you get one login across two office suites?',
+  'How does he handle employee offboarding?',
 ];
 
 const EXAMPLE_COUNT = 4;
