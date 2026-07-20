@@ -23,8 +23,9 @@ export const MODELS: ModelOption[] = [
   { id: 'Llama-3.2-3B-Instruct-q4f16_1-MLC', label: 'Llama 3.2 3B', size: '~1.8 GB' },
 ];
 
-// Default: small enough to keep the "runs in your browser" demo snappy.
-export const DEFAULT_MODEL = 'Qwen2.5-1.5B-Instruct-q4f16_1-MLC';
+// Default: the smallest model, so the "runs in your browser" demo has the
+// fastest first download and snappiest load. Visitors can size up in the picker.
+export const DEFAULT_MODEL = 'Qwen2.5-0.5B-Instruct-q4f16_1-MLC';
 
 let engine: MLCEngine | null = null;
 let loadedModel: string | null = null;

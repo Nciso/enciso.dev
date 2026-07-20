@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Enrique Enciso">
+  <style>
+    :root { --ink: #151515; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #f2f2f2; } }
+    line { stroke: var(--ink); stroke-linecap: round; }
+  </style>
+  <!-- The identity at rest: the deterministic signal pose for seed
+       "Enrique Enciso · enciso.dev" — 7 center-origin strokes, leaning right. -->
+  <g fill="none">
+    <line x1="6"     y1="14.24" x2="6"     y2="17.76" stroke-width="2.18"/>
+    <line x1="9.33"  y1="7.61"  x2="9.33"  y2="24.39" stroke-width="2.55"/>
+    <line x1="12.67" y1="12.39" x2="12.67" y2="19.61" stroke-width="2.09"/>
+    <line x1="16"    y1="6.65"  x2="16"    y2="25.35" stroke-width="2.31"/>
+    <line x1="19.33" y1="5.55"  x2="19.33" y2="26.45" stroke-width="2.72"/>
+    <line x1="22.67" y1="5"     x2="22.67" y2="27"    stroke-width="2.09"/>
+    <line x1="26"    y1="7.52"  x2="26"    y2="24.48" stroke-width="2.29"/>
+  </g>
+</svg>

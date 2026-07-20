@@ -3,6 +3,8 @@ import Markdown from 'react-markdown';
 import type { Chunk, Source } from './ask/types';
 import { retrieve, toSources, warmSearch } from './ask/search';
 import { buildHandoffPrompt } from './ask/prompt';
+import { Identity, useDriver } from './identity';
+import type { Phase } from './identity';
 import {
   DEFAULT_MODEL,
   MODELS,
@@ -79,8 +81,26 @@ export default function Ask() {
   modelRef.current = model;
   // A few prior turns kept in memory for follow-ups — never rendered as a thread.
   const historyRef = useRef<Turn[]>([]);
+  // The living-identity behavior driver. The app only nudges it (phase +
+  // impulses); the glyph in the composer visualizes whatever state it settles on.
+  const driver = useDriver();
 
   const busy = ex != null && ex.status !== 'done';
+
+  // Map the app's lifecycle onto the identity's behavior phases. Events don't
+  // animate the glyph directly — they just move its resting target.
+  useEffect(() => {
+    if (!driver) return;
+    let phase: Phase;
+    if (ai === 'error' || ex?.mode === 'error') phase = 'error';
+    else if (ex?.status === 'loading-model') phase = 'loading';
+    else if (ex?.status === 'thinking') phase = 'thinking';
+    else if (ex?.status === 'streaming') phase = 'streaming';
+    else if (ex?.status === 'done') phase = 'complete';
+    else if (query.trim()) phase = 'typing';
+    else phase = 'idle';
+    driver.setPhase(phase);
+  }, [driver, ai, ex?.status, ex?.mode, query]);
 
   useEffect(() => {
     warmSearch();
@@ -197,10 +217,11 @@ export default function Ask() {
     (raw: string) => {
       const question = raw.trim();
       if (!question || busy) return;
+      driver?.impulse(0.6); // a firmer pulse on submit
       setQuery('');
       void respond(question);
     },
-    [busy, respond]
+    [busy, respond, driver]
   );
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -244,12 +265,16 @@ export default function Ask() {
 
   const composer = (
     <div className="composer">
+      <Identity driver={driver} className="composer__identity" title="Assistant status" />
       <textarea
         ref={taRef}
         className="composer__input"
         rows={1}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          driver?.impulse(0.22); // each keystroke (and deletion) feeds a little energy
+        }}
         onKeyDown={onKeyDown}
         placeholder={hasContext ? 'Ask a follow-up…' : 'Ask anything about Enrique…'}
         aria-label="Ask a question"
@@ -275,6 +300,7 @@ export default function Ask() {
           <div ref={answerTopRef} className="ask__answer-anchor" />
           <Answer
             ex={ex}
+            driver={driver}
             onHandoff={handoff}
             copied={copied}
             hasContext={hasContext}
@@ -289,6 +315,7 @@ export default function Ask() {
         // Empty state: centered greeting, composer, examples.
         <>
           <div className="ask__intro">
+            <Identity driver={driver} className="ask__mark" size={30} title="Enrique Enciso" />
             <h1 className="ask__greeting">Ask about Enrique.</h1>
             <p className="muted ask__tagline">
               Answered by a small AI model running entirely in your browser — no server,
@@ -362,6 +389,7 @@ function ModelPicker({
 
 function Answer({
   ex,
+  driver,
   onHandoff,
   copied,
   hasContext,
@@ -371,6 +399,7 @@ function Answer({
   busy,
 }: {
   ex: Exchange;
+  driver: ReturnType<typeof useDriver>;
   onHandoff: () => void;
   copied: boolean;
   hasContext: boolean;
@@ -381,12 +410,16 @@ function Answer({
 }) {
   return (
     <div className="answer" aria-live="polite">
-      <p className="answer__q">{ex.question}</p>
+      <p className="answer__q">
+        <Identity driver={driver} className="answer__q-mark" size={22} />
+        <span>{ex.question}</span>
+      </p>
 
       {ex.status === 'loading-model' ? (
         <div>
           <p className="answer__status">
-            <Dots /> Preparing the on-device model… {ex.loadPct}%
+            <Identity driver={driver} className="answer__mark" size={22} /> Preparing the
+            on-device model… {ex.loadPct}%
           </p>
           <button type="button" className="answer__handoff answer__handoff--inline" onClick={onHandoff}>
             While it loads, ask ChatGPT instead
@@ -395,7 +428,8 @@ function Answer({
         </div>
       ) : ex.status === 'thinking' ? (
         <p className="answer__status">
-          <Dots /> Searching the knowledge base…
+          <Identity driver={driver} className="answer__mark" size={22} /> Searching the knowledge
+          base…
         </p>
       ) : ex.mode === 'ai' ? (
         <>
@@ -471,12 +505,3 @@ function Answer({
   );
 }
 
-function Dots() {
-  return (
-    <span className="dots" aria-hidden="true">
-      <i />
-      <i />
-      <i />
-    </span>
-  );
-}

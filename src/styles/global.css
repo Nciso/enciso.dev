@@ -72,7 +72,9 @@ body {
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 2rem;
+  /* Respect the notch / rounded corners on phones (viewport-fit=cover). */
+  padding: 1.5rem max(1.25rem, env(safe-area-inset-right)) 2rem
+    max(1.25rem, env(safe-area-inset-left));
 }
 
 /* ---------- Topbar ---------- */
@@ -86,7 +88,7 @@ body {
 .topbar__inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 max(1.25rem, env(safe-area-inset-right)) 0 max(1.25rem, env(safe-area-inset-left));
   height: 3.25rem;
   display: flex;
   align-items: center;
@@ -108,8 +110,16 @@ body {
   gap: 1.1rem;
   font-size: 0.85rem;
   overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
 }
+.topbar__nav::-webkit-scrollbar {
+  display: none; /* Safari / Chrome — the links scroll cleanly with no bar */
+}
+/* Nav links are hidden everywhere — the top bar is just brand + theme toggle.
+   Links stay in the DOM for crawlers; content is reachable via answer sources. */
 .topbar__nav a {
+  display: none;
   color: hsl(var(--muted-foreground));
   white-space: nowrap;
   transition: color 0.15s;
@@ -184,7 +194,8 @@ a:hover {
 }
 /* Empty state: center the greeting + composer in the viewport. */
 .ask:not(.ask--answered) {
-  min-height: calc(100vh - 11rem);
+  min-height: calc(100vh - 11rem); /* fallback */
+  min-height: calc(100dvh - 11rem); /* no jump when the mobile URL bar shows/hides */
   justify-content: center;
 }
 .ask__intro {
@@ -208,7 +219,7 @@ a:hover {
   display: flex;
   align-items: flex-end;
   gap: 0.5rem;
-  padding: 0.4rem 0.4rem 0.4rem 0.95rem;
+  padding: 0.4rem 0.4rem 0.4rem 0.6rem;
   background: hsl(var(--background));
   border: 1px solid hsl(var(--input));
   border-radius: 1.5rem;
@@ -219,7 +230,7 @@ a:hover {
    reachable while reading (and while a follow-up streams above it). */
 .ask--answered .composer {
   position: sticky;
-  bottom: 0.9rem;
+  bottom: calc(0.9rem + env(safe-area-inset-bottom));
   z-index: 5;
   margin-top: 2rem;
 }
@@ -286,10 +297,23 @@ a:hover {
   margin-top: 0.5rem;
 }
 .answer__q {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
   margin: 0 0 0.9rem;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+}
+/* Signal beside the question — aligned to the first line, subtle. */
+.answer__q-mark {
+  flex: none;
+  margin-top: 0.15rem;
+  color: hsl(var(--muted-foreground));
+}
+.answer__q > span {
+  min-width: 0; /* let long questions wrap instead of overflowing the flex row */
+  overflow-wrap: anywhere;
 }
 .answer__text {
   margin: 0;
@@ -536,6 +560,48 @@ a:hover {
   padding-left: 1rem;
 }
 
+/* ---------- Living identity (procedural signature) ---------- */
+/* Deterministic form from a seed; behavior from the app's state. The renderer
+   sets each stroke's scaleY / opacity per frame — CSS only sizes and colors. */
+.identity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: hsl(var(--muted-foreground));
+  vertical-align: middle;
+}
+.composer__identity {
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+}
+/* Signature above the greeting — a touch more presence than the composer mark. */
+.ask__mark {
+  margin-bottom: 0.85rem;
+  color: hsl(var(--foreground));
+}
+/* Beside the "thinking / loading" status line, in place of a generic spinner. */
+.answer__mark {
+  color: hsl(var(--muted-foreground));
+}
+.idsig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+.idsig__bar {
+  width: max(1.5px, calc(var(--w, 1) * 2px));
+  height: 72%;
+  background: currentColor;
+  border-radius: 999px;
+  transform: scaleY(0.2);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
 /* ---------- Prose (content pages) ---------- */
 .back-link {
   display: inline-block;
@@ -586,4 +652,34 @@ a:hover {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* ---------- Mobile (≤640px) ---------- */
+@media (max-width: 640px) {
+  .wrap {
+    padding-top: 1.1rem;
+    padding-bottom: 1.25rem;
+  }
+  .topbar__brand {
+    font-size: 0.88rem;
+  }
+  /* The greeting block gets a hair less lead-in on small screens. */
+  .ask__intro {
+    margin-bottom: 1.25rem;
+  }
+  .ask__tagline {
+    font-size: 0.95rem;
+  }
+  /* Larger, comfier tap targets for chips (closer to the 44px guideline). */
+  .chip {
+    padding: 0.5rem 0.85rem;
+  }
+  /* When actions wrap, don't strand the model picker on its own right-aligned
+     line — let the row read left-to-right. */
+  .answer__actions-spacer {
+    display: none;
+  }
+  .answer__actions {
+    gap: 0.9rem 1rem;
+  }
 }
