@@ -7,8 +7,9 @@
   "scripts": {
     "index": "node scripts/build-index.mjs",
     "og": "node scripts/build-og.mjs",
-    "prebuild": "node scripts/build-index.mjs && node scripts/build-og.mjs",
-    "dev": "pnpm run index && pnpm run og && astro dev",
+    "favicon": "node scripts/build-favicon.mjs",
+    "prebuild": "node scripts/build-index.mjs && node scripts/build-og.mjs && node scripts/build-favicon.mjs",
+    "dev": "pnpm run index && pnpm run og && pnpm run favicon && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

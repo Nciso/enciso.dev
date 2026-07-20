@@ -29,7 +29,10 @@ const keywords = 'Enrique Enciso, Reley, Jaro, AI agents, software engineer, Web
     <meta name="author" content="Enrique Enciso" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
-    <!-- Favicon: the identity's resting signal pose (see /favicon.svg). -->
+    <!-- Favicon: the identity's resting signal pose. SVG (theme-aware) for
+         modern browsers; .ico is the root fallback that non-HTML files like
+         /llms-full.txt resolve to. -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Open Graph -->
