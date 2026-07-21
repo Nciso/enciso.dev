@@ -1,6 +1,6 @@
 ---
 title: Reley
-description: Reley collects, verifies, and keeps business documents current — so teams stop chasing paperwork and AI agents can run the workflow safely.
+description: Reley turns the documents businesses exchange into a portable, verified record that travels with each company — the machine-readable proof layer agents will need before they transact.
 tags:
   - AI
   - agents
@@ -48,6 +48,23 @@ error-prone, and nobody can actually prove a document is authentic or still vali
 4. It re-requests documents on a cadence before they expire, so records never go
    stale.
 5. Teams review and approve — the final decision stays human.
+
+## A record that travels
+
+Collecting a document is just the entry point. Each verified fact a business
+provides — its legal name, tax standing, a license, an insurance policy — is
+deposited once, with its provenance attached, into a record that belongs to the
+business itself and travels with it. The next counterparty authorized to see it
+doesn't start over: the fact is already verified and current. Details that matter
+to only one relationship stay private to that relationship.
+
+Two things follow. Reley isn't a folder of PDFs filed per customer — it's a
+growing, portable, verified record of who each business *is*. And because those
+records accumulate, a machine-readable public profile for each business **emerges
+as a side-effect** — not a separate product we maintain, just the record filling
+in, richer with every verified deal. That accumulating record is precisely what
+an agent will query to check a counterparty — which is why the document workflow
+today and the verification layer tomorrow are one system seen at two moments.
 
 ## Built for AI agents
 
@@ -100,8 +117,9 @@ been full-time in it for the last year.
 
 ## How it relates to this site
 
-This personal site shares Reley's spirit: grounded, verifiable information instead
-of guesswork. The assistant on the homepage runs in your browser, answers only
-from published facts, and cites its sources — no hallucination, everything
-attributable. Reley applies that same discipline to the documents businesses
-exchange.
+This personal site shares Reley's spirit twice over. It's grounded: the assistant
+on the homepage runs in your browser, answers only from published facts, and cites
+its sources — no hallucination, everything attributable. And its picture of
+Enrique **emerges from accumulated facts** rather than a hand-written pitch —
+the same way a company's profile emerges from its record in Reley. The story you
+read here is a side-effect of the underlying knowledge, which is exactly the point.
