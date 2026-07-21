@@ -672,6 +672,11 @@ a:hover {
   gap: 1rem;
   flex-wrap: wrap;
 }
+.site-footer__links {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
 
 /* ---------- Mobile (≤640px) ---------- */
 @media (max-width: 640px) {

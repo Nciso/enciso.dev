@@ -18,7 +18,7 @@ Reley's promise is simple: **stop chasing docs, start closing relationships.**
 It automates requesting, collecting, following up on, and verifying the documents
 a business needs from its counterparties — and keeps them current as they expire.
 It's the product I'm building as CTO of [Jaro](/projects/jaro), alongside Jafeth
-Vázquez Navarro.
+Vázquez Navarro. See it live at **[reley.ai](https://reley.ai)**.
 
 ## The gap
 

@@ -16,6 +16,9 @@ everything, and I try to reply to thoughtful messages.
 ## Where I am online
 
 - **Email:** encisoenrique@gmail.com
+- **Reley:** the live product — [reley.ai](https://reley.ai)
+- **GitHub:** [github.com/Nciso](https://github.com/Nciso)
+- **LinkedIn:** [linkedin.com/in/enrique-enciso](https://www.linkedin.com/in/enrique-enciso/)
 - **Building:** Reley and Jaro (see the project pages).
 
 ## What to reach out about
