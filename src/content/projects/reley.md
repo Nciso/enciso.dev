@@ -1,47 +1,94 @@
 ---
 title: Reley
-description: A platform that gives businesses an AI-readable and verifiable identity.
+description: Reley collects, verifies, and keeps business documents current — so teams stop chasing paperwork and AI agents can run the workflow safely.
 tags:
   - AI
   - agents
-  - identity
+  - verification
+  - documents
+  - compliance
+  - startup
   - project
 order: 3
 ---
 
 ## What is Reley?
 
-Reley is a platform that gives businesses an AI-readable and verifiable
-identity. As more traffic comes from AI agents rather than human browsers,
-businesses need a way to present who they are, what they offer, and what's true
-about them in a form agents can consume and trust.
+Reley's promise is simple: **stop chasing docs, start closing relationships.**
+It automates requesting, collecting, following up on, and verifying the documents
+a business needs from its counterparties — and keeps them current as they expire.
+It's the product I'm building as CTO of [Jaro](/projects/jaro), alongside Jafeth
+Vázquez Navarro.
 
 ## The problem it solves
 
-Today an AI agent trying to learn about a business scrapes a marketing website
-built for humans and guesses. The result is hallucinated facts, stale
-information, and no way to verify anything. Reley replaces the guesswork with a
-structured, verifiable identity that agents can query directly.
+Before two businesses can transact, one has to collect and verify the other's
+paperwork — insurance, permits, tax IDs, certifications, bank details. Today that's
+manual: someone emails a contact, nudges them for weeks, files whatever comes
+back, and sets a calendar reminder to re-request it before it expires. It's slow,
+error-prone, and nobody can actually prove a document is authentic or still valid.
 
 ## How Reley works
 
-1. A business publishes structured facts about itself — offerings, policies,
-   contact points, credentials.
-2. Those facts are made verifiable, so a consuming agent can check them rather
-   than trust them blindly.
-3. Agents query the identity directly instead of scraping and inferring, so the
-   answers they give about the business are grounded and current.
+1. You specify the documents you need from a contact.
+2. Reley sends a shareable link — no account required for the recipient — and
+   follows up automatically until the documents arrive.
+3. It cross-checks each document for consistency and validity against its source.
+4. It re-requests documents on a cadence before they expire, so records never go
+   stale.
+5. Teams review and approve — the final decision stays human.
 
-## Why I built it
+## Built for AI agents
 
-I built Reley because the web is quietly being rebuilt for machine readers, and
-the current answer — let every agent scrape and hallucinate — doesn't scale and
-isn't trustworthy. Giving businesses a verifiable identity is the honest version
-of that future: agents get accurate answers, and businesses control their own
-story.
+Every document is attributed and every decision is gated and recorded, so an AI
+agent can operate Reley safely — running the collect, verify, and renew loop with
+a full audit trail instead of a person doing it by hand. As agents take on more
+business operations, the workflows they touch need exactly this: verifiable
+inputs, gated actions, and a record of every decision.
+
+## Why now — and why it gets big
+
+Every business relationship opens with the same unglamorous step: prove who you're
+dealing with and that their paperwork is real and current. It's a recurring,
+compliance-driven cost across whole industries — logistics, finance, insurance,
+real estate, procurement — and it's still done by hand. Two things make it a
+company rather than a feature. It **compounds**: documents expire, so the work
+repeats for every relationship, every year. And it's arriving right as **AI agents
+start transacting on businesses' behalf** — before an agent closes a deal it has
+to confirm the counterparty's B2B identity, and it can't chase a PDF or eyeball a
+stamp. It needs a system where every input is verified and every action is
+recorded.
+
+That's where Reley is going: **the layer AI agents use to confirm who a business
+is before they transact with it.** We're building it from the surface where the
+pain is already sharp and we've earned trust — logistics and finance — collecting
+and verifying documents today, on the way to being the identity check for
+agent-to-agent commerce.
+
+## The insight we earned
+
+We didn't start with this idea — we arrived at it. Building freight and factoring
+products at Jaro, every transaction stalled on the same step: collecting and
+verifying a counterparty's documents before anyone would transact. We built
+**JaroVerify** to solve it for ourselves, realized the document-verification
+workflow was the actual product hiding under the logistics, and generalized it
+into Reley — now used by logistics and finance teams beyond freight.
+
+## Where it stands
+
+Reley launched in June 2026 and has grown every month since — organic customer
+invitations are compounding month over month, and it's already the fastest-growing
+product the team runs. It's live with real, **paying** customers — **SCL, Cabalo,
+SB Group, Marksman, and ABC Logística** among them — and has collected **1,420+
+documents** across **300+ business relationships**. Reley grew out of Jaro's
+freight and factoring operations (backed by the Platanus accelerator), where the
+document-verification problem was impossible to ignore, and the founding team has
+been full-time in it for the last year.
 
 ## How it relates to this site
 
-This personal site is a small demonstration of the same philosophy: publish
-structured, grounded knowledge, and let anyone — human or agent — query it
-directly instead of navigating pages and guessing.
+This personal site shares Reley's spirit: grounded, verifiable information instead
+of guesswork. The assistant on the homepage runs in your browser, answers only
+from published facts, and cites its sources — no hallucination, everything
+attributable. Reley applies that same discipline to the documents businesses
+exchange.

@@ -29,6 +29,12 @@ const EXAMPLE_POOL = [
   'Has he worked in fintech?',
   'What is he like to work with?',
   'How can I contact you?',
+  // Founder story
+  'Why did Jaro pivot from freight to Reley?',
+  "What's the story behind Reley?",
+  'Why is Enrique the right person to build Reley?',
+  'How did he get from logistics to AI identity?',
+  'What did the team learn building Jaro?',
   // Agents & workflow
   'How does he run coding agents solo?',
   'Explain his spec → plan → review workflow.',

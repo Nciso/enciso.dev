@@ -17,12 +17,16 @@ order: 2
 
 ## Summary
 
-I'm a software engineer with more than a decade of experience, currently CTO at
-**Reley**. My path runs from Ruby on Rails and infrastructure-as-code, through
-fintech compliance and platform engineering, to the AI-native work I focus on
-today. I've been a founder, a CTO, a technical lead, and an individual
-contributor — usually the person who sets up the foundations and then helps a
-team build on top of them.
+I'm a software engineer with more than a decade of experience, currently
+co-founder and CTO of **Jaro** (Platanus-backed), where we're building
+**Reley** — a platform that collects and verifies the documents businesses need
+from each other, built for AI agents. My path runs from Ruby on Rails and
+infrastructure-as-code, through fintech compliance and platform engineering, to
+the AI-native work I focus on today. A throughline connects it: trust and
+verification between businesses — SSO/SCIM, bank-grade multitenancy, fintech
+compliance — which is exactly what Reley is now built on. I've been a founder, a
+CTO, a technical lead, and an individual contributor — usually the person who
+sets up the foundations and then helps a team build on top of them.
 
 ## What I focus on now
 
@@ -67,11 +71,15 @@ guessing. That means:
 
 ## Roles
 
-### Chief Technology Officer — Reley (Apr 2024 – present)
+### Co-founder & CTO — Jaro / Reley (Apr 2024 – present)
 
-I lead engineering at Reley, building a platform that gives businesses an
-AI-readable and verifiable identity. See the [Reley](/projects/reley) page for
-what the product does and why I'm building it.
+Co-founded Jaro (Platanus 2024-2) and lead its engineering. We started in Mexican
+freight and logistics, worked through an "Uber for freight" marketplace and
+invoice factoring, and found the wedge underneath all of it: before anyone will
+transact, they have to collect and verify the counterparty's documents. That
+became **Reley** — now live with real logistics and finance customers. See
+[Jaro](/projects/jaro) for the full arc and [Reley](/projects/reley) for the
+product.
 
 ### Software Engineer — AutoCloud (Aug 2021 – Apr 2024)
 

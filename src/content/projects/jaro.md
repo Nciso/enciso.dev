@@ -1,37 +1,68 @@
 ---
 title: Jaro
-description: The studio Enrique builds AI-native products under.
+description: The company Enrique co-founded — and the road through freight, factoring, and identity that became Reley.
 tags:
-  - studio
-  - AI
+  - startup
+  - fintech
+  - logistics
+  - pivot
+  - Platanus
+  - identity
   - project
 order: 4
 ---
 
 ## What is Jaro?
 
-Jaro is the studio I build under. It's the home for the AI-native products I
-work on — Reley is the flagship — and the umbrella for experiments in agent
-tooling, retrieval systems, and browser-native AI.
+Jaro is the company I co-founded and where I'm CTO. It started in Mexican freight
+and logistics, went through the Platanus accelerator (2024-2), and — after a
+year of building in the real economy — became the company behind **Reley**, our
+platform for collecting and verifying the documents businesses need from each
+other, built for AI agents. The founding team is Jafeth Vázquez Navarro (CEO),
+me (CTO).
 
-## What Jaro works on
+The short version: we kept trying to build logistics businesses, kept hitting the
+same wall, and eventually realized the wall was the product.
 
-- **AI-readable identity** — the Reley platform.
-- **Browser-native AI** — running retrieval and inference on the client so
-  products stay private and cheap, like the assistant on this site.
-- **Agent tooling** — the unglamorous plumbing that makes agents reliable:
-  grounding, citations, tool-calling, and evaluation.
+## The road we actually took
 
-## The philosophy
+**1. A hands-on 3PL.** We started operating as a third-party logistics provider —
+scrappy and close to the ground, moving real freight for real shippers. That's
+where we learned how Mexican logistics actually works, and where it breaks.
 
-Jaro exists to build software that's private by default and honest about what it
-knows. That means preferring static hosting over servers, build-time work over
-runtime cost, and grounded answers over confident guesses. If a product can run
-in the user's browser without sending their data anywhere, that's the version
-worth building.
+**2. "Uber for freight."** The obvious next step was a marketplace matching
+carriers and shippers. Mexican freight turns out to be structurally hard to
+marketplace: it's fragmented and largely informal, payment terms are brutal, and
+neither side will transact until they trust who's on the other end. A matching
+engine doesn't fix any of that.
 
-## Why the name matters less than the work
+**3. Factoring.** So we followed the demand into financing — factoring carriers
+against their invoices. There was real appetite for it. But it's a lending
+business, capital-intensive and not the company we wanted to build.
 
-Jaro is a small studio by design. The point isn't scale — it's building a few
-things that demonstrate what AI-native software should feel like: fast,
-trustworthy, and respectful of the person using it.
+**4. The wall was always identity.** Across every version — onboarding a carrier,
+clearing a shipper, underwriting a loan — the first question was the same: *who
+is this, and can I trust what they say about themselves?* Every deal stalled on
+validating identity and credentials before anything else could happen.
+
+**5. JaroVerify → Reley.** We built **JaroVerify** to solve that for ourselves:
+a way to collect and verify a counterparty's documents and credentials before
+transacting. That turned out to be the part everyone wanted, and it generalized
+far beyond freight — to any logistics or finance team that has to chase, verify,
+and renew documents. JaroVerify became [Reley](/projects/reley).
+
+## What Jaro built along the way
+
+The freight directory we started with still draws roughly **5,000 monthly
+visits** — a small, real reminder that we shipped things people used at every
+step, not slideware. Each pivot was a response to what the market actually did,
+not a change of mind.
+
+## Why this story matters
+
+The throughline isn't logistics — it's **trust and verification between
+businesses**, which is the same problem I'd spent a decade working on before Jaro
+(SSO and SCIM, bank-grade multitenancy, fintech compliance). Freight was where the
+need became undeniable and where we found the wedge that generalizes. Reley is
+that wedge, aimed at the moment AI agents start operating these workflows and need
+verifiable inputs and a record of every decision.
