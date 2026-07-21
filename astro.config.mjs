@@ -9,9 +9,11 @@ export default defineConfig({
   site: process.env.PUBLIC_SITE_URL || 'https://enciso.dev',
   integrations: [react()],
   markdown: {
-    // github-slugger-compatible heading ids so citation anchors line up with
-    // the chunk anchors produced by scripts/build-index.mjs.
-    shikiConfig: { theme: 'github-dark' },
+    // No Shiki highlighting — its dark theme clashes with the grayscale design.
+    // Code blocks are styled by our own theme-aware CSS (.prose pre). Heading
+    // ids remain github-slugger-compatible via Astro's default, so citation
+    // anchors still line up with scripts/build-index.mjs chunk anchors.
+    syntaxHighlight: false,
   },
   vite: {
     // WebLLM is large and dynamically imported. Vite's dep optimizer produces
