@@ -20,6 +20,17 @@ a business needs from its counterparties — and keeps them current as they expi
 It's the product I'm building as CTO of [Jaro](/projects/jaro), alongside Jafeth
 Vázquez Navarro.
 
+## The gap
+
+The web indexed what companies *say* about themselves — websites, marketing,
+reviews. That layer is commoditized: Google indexed it, LLMs compressed it, and
+services like Exa and Parallel already serve it to agents. What the web never
+indexed is what *proves* it — insurance policies, tax standing, licenses,
+corporate records. That information is exchanged by email, millions of times a
+day, before every deal — and it's machine-readable by no one. Every agent
+transaction will need that second column, verifiable and in milliseconds. Today
+nobody serves it.
+
 ## The problem it solves
 
 Before two businesses can transact, one has to collect and verify the other's
@@ -46,24 +57,26 @@ a full audit trail instead of a person doing it by hand. As agents take on more
 business operations, the workflows they touch need exactly this: verifiable
 inputs, gated actions, and a record of every decision.
 
-## Why now — and why it gets big
+## Why now
 
-Every business relationship opens with the same unglamorous step: prove who you're
-dealing with and that their paperwork is real and current. It's a recurring,
-compliance-driven cost across whole industries — logistics, finance, insurance,
-real estate, procurement — and it's still done by hand. Two things make it a
-company rather than a feature. It **compounds**: documents expire, so the work
-repeats for every relationship, every year. And it's arriving right as **AI agents
-start transacting on businesses' behalf** — before an agent closes a deal it has
-to confirm the counterparty's B2B identity, and it can't chase a PDF or eyeball a
-stamp. It needs a system where every input is verified and every action is
-recorded.
+Commerce is passing to agents, and the payment rails are already live — x402 (now
+under the Linux Foundation), alongside Visa, Mastercard, Stripe, Coinbase, and
+Cloudflare. Agents can already search, negotiate, and pay. The one thing they
+still can't do is **verify who's on the other side.** The trust step that used to
+be a human reading a PDF has no machine-readable equivalent yet — and it's also a
+recurring cost that compounds, because documents expire and every relationship
+has to be re-verified. That's the gap, arriving right as the volume of agent
+transactions starts to explode.
 
-That's where Reley is going: **the layer AI agents use to confirm who a business
-is before they transact with it.** We're building it from the surface where the
-pain is already sharp and we've earned trust — logistics and finance — collecting
-and verifying documents today, on the way to being the identity check for
-agent-to-agent commerce.
+## The bet
+
+Here's the bet: as agents start doing business autonomously, they'll need
+somewhere to check who a company is *before* they transact — proof, not marketing,
+returned in milliseconds. **Reley wants to be that place.** We're building toward
+it from the surface where the pain is already sharp and we've earned trust —
+logistics and finance — collecting and verifying documents today, and
+accumulating the verified record that becomes the thing agents query tomorrow.
+It's a bet on where commerce is going, anchored to a business that already works.
 
 ## The insight we earned
 
