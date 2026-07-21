@@ -49,10 +49,11 @@ guessing. That means:
 - **Languages:** TypeScript, JavaScript, Go, Ruby, Python.
 - **AI / retrieval:** WebLLM, MiniSearch, embeddings, RAG pipelines,
   tool-calling agents.
-- **Infrastructure:** Terraform (including a custom provider), AWS, Docker,
-  CI/CD, serverless, Heroku, Infrastructure as Code.
-- **Backend:** Ruby on Rails, REST APIs, PostgreSQL, document-oriented
-  databases, multitenancy.
+- **Infrastructure:** Terraform (including a custom provider), AWS, Vercel,
+  Railway, vanilla Linux servers, Docker, CI/CD, serverless, Heroku,
+  Infrastructure as Code.
+- **Backend:** Go, Ruby on Rails, Next.js, REST APIs, PostgreSQL,
+  document-oriented databases, multitenancy.
 - **Frontend:** React, Astro, Vue / NativeScript, JAMstack.
 - **Security & compliance:** SCIM/SSO, SOC 2, HIPAA, PCI DSS, data governance.
 
