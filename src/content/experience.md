@@ -10,6 +10,8 @@ tags:
   - infrastructure
   - fintech
   - leadership
+  - certifications
+  - MIT
 order: 2
 ---
 
@@ -53,6 +55,14 @@ guessing. That means:
   databases, multitenancy.
 - **Frontend:** React, Astro, Vue / NativeScript, JAMstack.
 - **Security & compliance:** SCIM/SSO, SOC 2, HIPAA, PCI DSS, data governance.
+
+## Certifications
+
+- **Applied Data Science Program: Leveraging AI for Effective Decision-Making** —
+  MIT Professional Education (Jan – Apr 2024). ·
+  [Verify](https://credentials.professional.mit.edu/5de6e5eb-c371-449a-a62b-8ccfb7735200)
+- **Generative AI for Natural Language Processing** — Great Learning (2025). ·
+  [Verify](https://www.mygreatlearning.com/certificate/XGZDCEDS)
 
 ## Roles
 
