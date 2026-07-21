@@ -18,7 +18,7 @@ order: 2
 ## Summary
 
 I'm a software engineer with more than a decade of experience, currently
-co-founder and CTO of **Jaro** (Platanus-backed), where we're building
+co-founder and CTO of **Jaro**, where we're building
 **Reley** — a platform that collects and verifies the documents businesses need
 from each other, built for AI agents. My path runs from Ruby on Rails and
 infrastructure-as-code, through fintech compliance and platform engineering, to
@@ -73,7 +73,7 @@ guessing. That means:
 
 ### Co-founder & CTO — Jaro / Reley (Apr 2024 – present)
 
-Co-founded Jaro (Platanus 2024-2) and lead its engineering. We started in Mexican
+Co-founded Jaro and lead its engineering. We started in Mexican
 freight and logistics, worked through an "Uber for freight" marketplace and
 invoice factoring, and found the wedge underneath all of it: before anyone will
 transact, they have to collect and verify the counterparty's documents. That

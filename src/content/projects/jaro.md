@@ -6,7 +6,6 @@ tags:
   - fintech
   - logistics
   - pivot
-  - Platanus
   - identity
   - project
 order: 4
@@ -15,8 +14,8 @@ order: 4
 ## What is Jaro?
 
 Jaro is the company I co-founded and where I'm CTO. It started in Mexican freight
-and logistics, went through the Platanus accelerator (2024-2), and — after a
-year of building in the real economy — became the company behind **Reley**, our
+and logistics and — after a year of building in the real economy — became the
+company behind **Reley**, our
 platform for collecting and verifying the documents businesses need from each
 other, built for AI agents. The founding team is Jafeth Vázquez Navarro (CEO),
 me (CTO).

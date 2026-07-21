@@ -111,7 +111,7 @@ invitations are compounding month over month, and it's already the fastest-growi
 product the team runs. It's live with real, **paying** customers — **SCL, Cabalo,
 SB Group, Marksman, and ABC Logística** among them — and has collected **1,420+
 documents** across **300+ business relationships**. Reley grew out of Jaro's
-freight and factoring operations (backed by the Platanus accelerator), where the
+freight and factoring operations, where the
 document-verification problem was impossible to ignore, and the founding team has
 been full-time in it for the last year.
 

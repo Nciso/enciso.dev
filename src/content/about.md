@@ -11,7 +11,7 @@ order: 1
 ## Who I am
 
 I'm Enrique Enciso — a software engineer and startup founder. I'm the CTO and
-co-founder of **[Jaro](/projects/jaro)**, the Platanus-backed company building
+co-founder of **[Jaro](/projects/jaro)**, the company building
 **[Reley](/projects/reley)**, a platform that collects and verifies the documents
 businesses need from each other, built for AI agents. I care about systems that
 are private by default, cheap to run, and honest about what they know.
